@@ -25,7 +25,7 @@ public class MainUI extends JFrame {
     int[] res = new int[] {1280, 720};
 
     MainUI() {
-        displayFrame();
+        displayScreen();
         fillHashMap();
     }
 
@@ -116,12 +116,10 @@ public class MainUI extends JFrame {
         results.setBounds(cx(0), cy(0.5), cx(1), cy(0.25));
     }
 
-    private void displayFrame() {
+    private void displayScreen() {
         adjustSize();
-        startButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if (started) { stop(); } else {start();}
-            }
+        startButton.addActionListener(e -> {
+            if (started) { stop(); } else {start();}
         });
 
 
